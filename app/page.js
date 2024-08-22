@@ -36,10 +36,10 @@ export default function Page() {
       <div className='border-t border-b border-[#e5e5e5] py-[1rem]'>
         <div className='flex items-center justify-between'>
           <p className='text-base font-semibold underline' onClick={toggleDrawer}>Filter</p>
-          <div class="relative inline-block text-left">
+          <div className="relative inline-block text-left">
             <div>
               <button
-                class="flex w-full justify-center gap-[0.5rem] rounded-md bg-white px-3 py-2 text-base font-semibold"
+                className="flex w-full justify-center gap-[0.5rem] rounded-md bg-white px-3 py-2 text-base font-semibold"
                 onClick={() => setIsSortOpen(!isSortOpen)}
               >
                 Sort by
@@ -50,8 +50,8 @@ export default function Page() {
             </div>
 
             {isSortOpen &&
-              <div class="absolute right-0 z-10 mt-2 w-[14rem] origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                <div class="p-[1rem]">
+              <div className="absolute right-0 z-10 mt-2 w-[14rem] origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                <div className="p-[1rem]">
                   <ul className='flex flex-col gap-[1rem]'>
                     <li className='flex items-center gap-[0.5em] cursor-pointer' onClick={() => handleSort('lowprice')}>
                       {sortOption === 'lowprice' ? (
@@ -91,7 +91,7 @@ export default function Page() {
             <div className='flex justify-between items-center py-[1rem] border-b border-[#e5e5e5]'>
               <p className='text-xl'>Filter</p>
               <div onClick={toggleDrawer}>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-[1.5rem] w-[1.5rem]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-[1.5rem] w-[1.5rem]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </div>
