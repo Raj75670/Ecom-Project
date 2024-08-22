@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 
-export default function AccordionWithFilter({ handleProductFilter, isDrawerOpen }) {
+function AccordionWithFilterComponent({ handleProductFilter, isDrawerOpen }) {
     const [activeIndexes, setActiveIndexes] = useState([0]);
     const [selectedFilters, setSelectedFilters] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
@@ -112,6 +112,14 @@ export default function AccordionWithFilter({ handleProductFilter, isDrawerOpen 
                 </div>
             ))}
         </div>
+    );
+}
+
+export default function AccordionWithFilter(props) {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <AccordionWithFilterComponent {...props} />
+        </Suspense>
     );
 }
 
